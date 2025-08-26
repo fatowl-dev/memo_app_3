@@ -10,6 +10,12 @@ rules([
 
 state(['title', 'body']);
 
+// バリデーションルールを定義
+rules([
+    'title' => 'required|string|max:50',
+    'body' => 'required|string|max:2000',
+]);
+
 $store = function () {
     $this->validate(); // バリデーションチェック
     // フォームからの入力値をデータベースへ保存
