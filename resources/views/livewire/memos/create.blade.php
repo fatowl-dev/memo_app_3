@@ -2,13 +2,13 @@
 use function Livewire\Volt\{state, rules};
 use App\Models\Memo;
 
+state(['title', 'body']);
+
 // バリデーションルールを定義
 rules([
     'title' => 'required|string|max:50',
     'body' => 'required|string|max:2000',
 ]);
-
-state(['title', 'body']);
 
 $store = function () {
     $this->validate(); // バリデーションチェック
